@@ -1,11 +1,5 @@
 # GoMySQL
 
-This project is part of a 
-<a href="https://medium.com/@ranjeet.17may/golang-for-dummies-533966dfb4f4">Golang Tutorial</a> repository.
-In this project, we demonstrate how to integrate MySQL in Go. 
-To get more details, you can go through the
-<a href="https://medium.com/@ranjeet.17may/golang-with-mysql-4f463489f340">Tutorial</a>.
-
 ## Prerequisites
 To Install Go, <a href="https://golang.org/doc/install">click here</a>.<br/><br/>
 Add go-mysql dependency, using 
@@ -44,5 +38,3 @@ Once the binary is generated, execute the binary to run the program.<br/>
 
 `./GoMySQL`<br/>
 
-## Maintainers
-<ul><a href="https://github.com/RanjeetKaur17">RanjeetKaur17</a></ul>
