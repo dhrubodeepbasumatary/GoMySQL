@@ -2,13 +2,13 @@ package service
 
 import (
 	"go-go-golang/GoMySQL/model"
-	"go-go-golang/GoMySQL/dao"
+	"go-go-golang/GoMySQL/ctr"
 	"github.com/pkg/errors"
 )
 
 func AddStudent(name string, age int8) (model.Student, error) {
 	student := model.Student{Name:name, Age:age}
-	rowsAffected, lastInsertedId, err := dao.AddStudent(student)
+	rowsAffected, lastInsertedId, err := ctr.AddStudent(student)
 	if err == nil && rowsAffected > 0 {
 		student.StudentID = lastInsertedId
 	}
@@ -17,7 +17,7 @@ func AddStudent(name string, age int8) (model.Student, error) {
 
 func UpdateStudent(id int64, name string, age int8) (model.Student, error) {
 	student := model.Student{StudentID:id, Name:name, Age:age}
-	rowsAffected, err := dao.UpdateStudent(student)
+	rowsAffected, err := ctr.UpdateStudent(student)
 	if err == nil && rowsAffected == 0 {
 		err = errors.New("No Data Found")
 	}
@@ -25,7 +25,7 @@ func UpdateStudent(id int64, name string, age int8) (model.Student, error) {
 }
 
 func DeleteStudent(studentID int64) (bool, error) {
-	rowsAffected, err := dao.DeleteStudent(studentID)
+	rowsAffected, err := ctr.DeleteStudent(studentID)
 	if err == nil && rowsAffected == 0 {
 		err = errors.New("No Data Found")
 	}
@@ -36,5 +36,5 @@ func DeleteStudent(studentID int64) (bool, error) {
 }
 
 func GetStudent(studentID int64) (model.Student, error) {
-	return dao.GetStudent(studentID)
+	return ctr.GetStudent(studentID)
 }

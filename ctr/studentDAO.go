@@ -1,4 +1,4 @@
-package dao
+package ctr
 
 import (
 	"database/sql"

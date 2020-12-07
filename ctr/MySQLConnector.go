@@ -1,4 +1,4 @@
-package dao
+package ctr
 
 import (
 	_ "github.com/go-sql-driver/mysql"
